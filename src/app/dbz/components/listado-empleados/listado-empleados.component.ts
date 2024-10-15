@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Empleado } from '../../interfaces/empeados.interface';
 
 @Component({
@@ -11,8 +11,14 @@ export class ListadoEmpleadosComponent {
   @Input()
   public empleadosLista: Empleado[] = [];
 
+
+
+
+
+  @Output()
+  public onDelete: EventEmitter<number> = new EventEmitter();
   onDeletedEmpleado(index: number): void {
-    this.empleadosLista.splice(index, 1);
+    this.onDelete.emit(index);
+    //this.empleadosLista.splice(index, 1);
     console.log('Empleado eliminado', index);
-  }
-}
+}}

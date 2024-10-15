@@ -1,12 +1,7 @@
 import { Empleado } from './../interfaces/empeados.interface';
 import { Injectable } from '@angular/core';
 
-
-
-
 import{v4 as uuid} from 'uuid';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -44,13 +39,13 @@ export class DbzService {
     const newEmpleado:Empleado={id:uuid(),...empleado};
     this.empleados.push(newEmpleado);
   }
-  // onDeletedEmpleado(index: number) {
-  //   this.empleados.splice(index, 1);
-  //   console.log('Empleado eliminado', index);
-  // }
-  deleteEmpleadoById(id: String) {
-    this.empleados = this.empleados.filter((empleado) => empleado.id !== id);
+  onDeleteEmpleado(index: number) {
+    this.empleados.splice(index, 1);
+    console.log('Empleado eliminado', index);
   }
+  // deleteEmpleadoById(id: String) {
+  //   this.empleados = this.empleados.filter((empleado) => empleado.id !== id);
+  // }
 
 
 
