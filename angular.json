@@ -25,6 +25,7 @@
           "options": {
             "outputPath": "dist/cero_experto",
             "index": "src/index.html",
+
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"

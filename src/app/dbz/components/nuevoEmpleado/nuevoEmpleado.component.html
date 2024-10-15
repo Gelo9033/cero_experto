@@ -1,0 +1,10 @@
+<div class="col">
+  <h4>Agregar empleado</h4>
+  <form class="row" (ngSubmit)="emitirEmpleado()">
+    <input type="text"   name="nombre"   [(ngModel)]="empleado.nombre"  class= "form-control  mb-2" placeholder="Nombre">
+    <input type="number" name="sueldo"   [(ngModel)]="empleado.sueldo " class= "form-control  mb-2" placeholder="Sueldo">
+
+    <button class="btn btn-primary mx-2" type="submit" >Agregar</button >
+
+  </form>
+</div>

@@ -1,1 +1,9 @@
-<h1>hola mundo main page</h1>
+<div class="row">
+<div class="col">
+<app-dbz-listadoEmpleados [empleadosLista]="dbzService.empleados"></app-dbz-listadoEmpleados>
+
+</div>
+<div class="col">
+<app-dbz-nuevoEmpleado (onNewEmpleado)="dbzService.onNewEmpleado($event)"></app-dbz-nuevoEmpleado>
+</div>
+</div>
