@@ -1,5 +1,5 @@
 export interface Empleado{
-    id?: String;
+    id?: string;
     nombre: string;
     sueldo: number;
 

@@ -8,44 +8,17 @@ import { DbzService } from '../services/dbz.service';
 })
 
 export class MainPageComponent  {
-  public empleados:Empleado[]=[
-    {
-      //id:uuid(),
-      nombre: 'Juan',
-      sueldo: 1000
-    },
-    {
-      //id:uuid(),
-      nombre: 'Pedro',
-      sueldo: 2000
-    },
-    {
-      //id:uuid(),
-      nombre: 'Maria',
-      sueldo: 3000
-    },
-    {
-      //id:uuid(),
-      nombre: 'Majo',
-      sueldo: 3000
-    },
-    {
-      //id:uuid(),
-      nombre: 'Esther',
-      sueldo: 3000
-    },
-  ];
+  constructor(private dbzService:DbzService){}
 
-  onNewEmpleado(empleado:Empleado):void{
-    this.empleados.push(empleado);
-
-    // console.log('MainPageComponent', empleado);
-    // console.log(empleado);
-    //const newEmpleado:Empleado={id:uuid(),...empleado};
-    //this.empleados.push(newEmpleado);
+  get empleados():Empleado[]{
+    return [...this.dbzService.empleados];
   }
   onDeleteEmpleado(index: number) {
-    this.empleados.splice(index, 1);
+    this.dbzService.onDeleteEmpleado(index);
     console.log('Empleado eliminado', index);
   }
+  onNewEmpleado(empleado:Empleado):void{
+    this.dbzService.addEmpleado(empleado);
+  }
+
 }

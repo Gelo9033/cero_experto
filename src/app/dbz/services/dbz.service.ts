@@ -35,18 +35,17 @@ export class DbzService {
     },
   ];
 
-  onNewEmpleado(empleado:Empleado):void{
+  addEmpleado(empleado:Empleado):void{
     const newEmpleado:Empleado={id:uuid(),...empleado};
-    this.empleados.push(newEmpleado);
+    this.empleados.push(empleado);
   }
   onDeleteEmpleado(index: number) {
     this.empleados.splice(index, 1);
     console.log('Empleado eliminado', index);
   }
-  // deleteEmpleadoById(id: String) {
-  //   this.empleados = this.empleados.filter((empleado) => empleado.id !== id);
+  // onDeleteEmpleadoById(id: string) {
+  //   this.empleados = this.empleados.filter(empleado => empleado.id !== id);
   // }
-
 
 
 }
